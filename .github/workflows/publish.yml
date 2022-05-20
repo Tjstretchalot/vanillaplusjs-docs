@@ -24,6 +24,6 @@ jobs:
         env:
           REPO: self
           BRANCH: gh-pages
-          FOLDER: out
+          FOLDER: out/www
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MESSAGE: "Build: ({sha}) {msg}"
