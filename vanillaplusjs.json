@@ -1,1 +1,115 @@
-{"version": "1.0.0", "host": null, "images": {"formats": {"jpeg": {"exports": {"50": {"min_area_px2": 360000, "max_area_px2": null, "preference": 1, "formatter_kwargs": {"quality": 50}}, "75": {"min_area_px2": null, "max_area_px2": null, "preference": 2, "formatter_kwargs": {"quality": 75}}, "85": {"min_area_px2": null, "max_area_px2": null, "preference": 3, "formatter_kwargs": {"quality": 85}}, "100": {"min_area_px2": null, "max_area_px2": 360000, "preference": 5, "formatter_kwargs": {"quality": 100}}}, "minimum_unit_size_bytes": 85000}, "webp": {"exports": {"50": {"min_area_px2": 160000, "max_area_px2": null, "preference": 1, "formatter_kwargs": {"quality": 50, "method": 6, "lossless": false}}, "75": {"min_area_px2": 360000, "max_area_px2": null, "preference": 2, "formatter_kwargs": {"quality": 75, "method": 6, "lossless": false}}, "85": {"min_area_px2": null, "max_area_px2": null, "preference": 3, "formatter_kwargs": {"quality": 85, "method": 6, "lossless": false}}, "100": {"min_area_px2": null, "max_area_px2": 360000, "preference": 5, "formatter_kwargs": {"quality": 100, "method": 6, "lossless": false}}, "lossless": {"min_area_px2": null, "max_area_px2": 160000, "preference": 8, "formatter_kwargs": {"quality": 100, "method": 6, "lossless": true}}}, "minimum_unit_size_bytes": 85000}}, "default_format": "jpeg", "maximum_resolution": 7, "resolution_step": "0.5"}, "auto_generate_images_js_placeholders": true, "external_files": {}, "js_constants": {"relpath": "src/public/js/constants.js", "shared": {}, "dev": {"API_URL": "http://127.0.0.1:8080"}, "prod": {"API_URL": ""}}}
+{
+    "version": "1.0.0",
+    "host": "tjstretchalot.github.io/vanillaplusjs-docs",
+    "images": {
+        "formats": {
+            "jpeg": {
+                "exports": {
+                    "50": {
+                        "min_area_px2": 360000,
+                        "max_area_px2": null,
+                        "preference": 1,
+                        "formatter_kwargs": {
+                            "quality": 50
+                        }
+                    },
+                    "75": {
+                        "min_area_px2": null,
+                        "max_area_px2": null,
+                        "preference": 2,
+                        "formatter_kwargs": {
+                            "quality": 75
+                        }
+                    },
+                    "85": {
+                        "min_area_px2": null,
+                        "max_area_px2": null,
+                        "preference": 3,
+                        "formatter_kwargs": {
+                            "quality": 85
+                        }
+                    },
+                    "100": {
+                        "min_area_px2": null,
+                        "max_area_px2": 360000,
+                        "preference": 5,
+                        "formatter_kwargs": {
+                            "quality": 100
+                        }
+                    }
+                },
+                "minimum_unit_size_bytes": 85000
+            },
+            "webp": {
+                "exports": {
+                    "50": {
+                        "min_area_px2": 160000,
+                        "max_area_px2": null,
+                        "preference": 1,
+                        "formatter_kwargs": {
+                            "quality": 50,
+                            "method": 6,
+                            "lossless": false
+                        }
+                    },
+                    "75": {
+                        "min_area_px2": 360000,
+                        "max_area_px2": null,
+                        "preference": 2,
+                        "formatter_kwargs": {
+                            "quality": 75,
+                            "method": 6,
+                            "lossless": false
+                        }
+                    },
+                    "85": {
+                        "min_area_px2": null,
+                        "max_area_px2": null,
+                        "preference": 3,
+                        "formatter_kwargs": {
+                            "quality": 85,
+                            "method": 6,
+                            "lossless": false
+                        }
+                    },
+                    "100": {
+                        "min_area_px2": null,
+                        "max_area_px2": 360000,
+                        "preference": 5,
+                        "formatter_kwargs": {
+                            "quality": 100,
+                            "method": 6,
+                            "lossless": false
+                        }
+                    },
+                    "lossless": {
+                        "min_area_px2": null,
+                        "max_area_px2": 160000,
+                        "preference": 8,
+                        "formatter_kwargs": {
+                            "quality": 100,
+                            "method": 6,
+                            "lossless": true
+                        }
+                    }
+                },
+                "minimum_unit_size_bytes": 85000
+            }
+        },
+        "default_format": "jpeg",
+        "maximum_resolution": 7,
+        "resolution_step": "0.5"
+    },
+    "auto_generate_images_js_placeholders": true,
+    "external_files": {},
+    "js_constants": {
+        "relpath": "src/public/js/constants.js",
+        "shared": {},
+        "dev": {
+            "API_URL": "http://127.0.0.1:8080"
+        },
+        "prod": {
+            "API_URL": ""
+        }
+    }
+}
