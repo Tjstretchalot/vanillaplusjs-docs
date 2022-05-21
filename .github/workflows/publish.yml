@@ -19,6 +19,10 @@ jobs:
       - name: Build
         run: vanillaplusjs build --no-symlinks
 
+      - name: Initialize CNAME
+        run: |
+          echo vanillaplusjs.com > out/www/CNAME
+
       - name: Push
         uses: s0/git-publish-subdir-action@develop
         env:
