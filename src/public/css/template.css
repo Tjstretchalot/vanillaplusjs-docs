@@ -1,0 +1,39 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--col-primary)
+}
+
+h1 {
+    /*! PREPROCESSOR: import .text-h1 */
+}
+
+h2 {
+    /*! PREPROCESSOR: import .text-h2 */
+}
+
+
+h3 {
+    /*! PREPROCESSOR: import .text-h3 */
+}
+
+
+h4 {
+    /*! PREPROCESSOR: import .text-h4 */
+}
+
+h5 {
+    /*! PREPROCESSOR: import .text-h5 */
+}
+
+.subheader {
+    /*! PREPROCESSOR: import .text-caption-1 */
+    color: var(--col-accent);
+    margin-bottom: 0.5rem;
+}
+
+p {
+    /*! PREPROCESSOR: import .text-body-1 */
+}

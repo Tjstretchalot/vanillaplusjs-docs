@@ -2,23 +2,76 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta property="og:url">
-  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport">
-  <meta content="VanillaPlusJS" property="og:site_name">
+  <!--[TEMPLATE: ["/head/standard.html"]]-->
   <meta content="Modern javascript library for the vanilla fanatic" property="og:title">
-  <meta
-    content="A framework for building web frontends which looks as similar to vanilla html/css/js as possible without the tedium"
-    property="og:description">
-  <meta content="website" propety="og:type">
+  <meta content="A framework for building fast-to-write, easy-to-understand websites." property="og:description">
+  <meta content="" property="og:url">
   <link href="" rel="canonical">
-  <title>VanillaPlusJS</title>
+  <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+  <title>Vanilla Plus JS</title>
 </head>
 
 <body>
-  <h1>VanillaPlusJS</h1>
+  <!--[TEMPLATE: ["/body/before.html"]]-->
+  <div class="page-outer-container">
+    <div class="page-inner-container">
+      <h1>Vanilla Plus JS</h1>
 
-  <p>Works like a charm</p>
+      <p>
+        This is the documentation for
+        <a class="link-button" href="https://github.com/Tjstretchalot/vanillaplusjs">Vanilla Plus JS</a>.
+        The source code for this documentation is available <a class="link-button"
+          href="https://github.com/Tjstretchalot/vanillaplusjs-docs">here</a>.
+      </p>
+
+      <p>
+        Vanilla Plus JS is a framework for building fast-to-write, easy-to-understand websites. As
+        the name implies, it's intended to get out of the way; modern HTML, JavaScript, and CSS3
+        contain nearly everything required to easily build websites. Where they still fall short,
+        this framework comes in to save the day.
+      </p>
+
+      <h2>Getting Started</h2>
+
+      <p>You'll need <a class="link-button" href="https://www.python.org/downloads/">Python 3.8+</a>:</p>
+
+      <div class="code-tabs">
+        <div class="code-tablist" role="tablist" aria-label="Operating Systems">
+          <button role="tab" aria-selected="true" aria-controls="windows" id="windows-tab" tabindex="0"
+            class="code-tab">Windows</button>
+          <button role="tab" aria-selected="false" aria-controls="macos" id="macos-tab" tabindex="-1"
+            class="code-tab">macOS</button>
+          <button role="tab" aria-selected="false" aria-controls="linux" id="linux-tab" tabindex="-1"
+            class="code-tab">Linux</button>
+        </div>
+        <div id="windows" role="tabpanel" aria-labelledby="windows-tab" class="code-tabpanel">
+          <pre><code class="text-monospace">python -m venv venv
+"venv/Scripts/activate.bat"
+python -m pip install -U pip
+pip install vanillaplusjs
+vanillaplusjs init
+vanillaplusjs dev --watch</code></pre>
+        </div>
+        <div id="macos" role="tabpanel" aria-labelledby="macos-tab" class="code-tabpanel" hidden>
+          <pre><code class="text-monospace">python -m venv venv
+"venv/bin/activate"
+python -m pip install -U pip
+pip install vanillaplusjs
+vanillaplusjs init
+vanillaplusjs dev --watch</code></pre>
+        </div>
+        <div id="linux" role="tabpanel" aria-labelledby="linux-tab" class="code-tabpanel" hidden>
+          <pre><code class="text-monospace">python -m venv venv
+"venv/bin/activate"
+python -m pip install -U pip
+pip install vanillaplusjs
+vanillaplusjs init
+vanillaplusjs dev --watch</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--[TEMPLATE: ["/body/after.html"]]-->
 </body>
 
 </html>
