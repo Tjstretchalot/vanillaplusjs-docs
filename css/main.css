@@ -1,0 +1,109 @@
+/* https://coolors.co/333333-643173-7d5ba6-86a59c-89ce94 */
+:root {
+    --col-background: #333333;
+    --col-line: #643173;
+    --col-primary: #7d5ba6;
+    --col-primary-light: #967AB8;
+    --col-secondary-dark: #6FC37D;
+    --col-secondary: #89ce94;
+    --col-secondary-light: #A9DBB1;
+    --col-accent-dark: #72978D;
+    --col-accent: #86a59c;
+    --col-accent-light: #A1BAB3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--col-background);
+    color: var(--col-secondary);
+}
+
+/* #region TYPOGRAPHY */
+.serif {
+    font-family: "Times New Roman", Times, serif;
+}
+
+.sans-serif {
+    font-family: arial, sans-serif;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.text-h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.text-h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.text-h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.text-h4 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.25rem;
+    line-height: 1.2;
+}
+
+.text-h5 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.1rem;
+    font-variant: small-caps;
+    line-height: 1.2;
+}
+
+.text-body-1 {
+    font-family: arial, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+.text-caption-1 {
+    font-family: arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.25;
+}
+
+.text-monospace {
+    font-family: monospace;
+    font-size: 1.25rem;
+    line-height: 1.5;
+}
+
+/* #endregion */
+
+/* #region UNSTYLING */
+.unstyle {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    cursor: default;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+/* #endregion */

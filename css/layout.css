@@ -1,0 +1,8 @@
+.page-outer-container {
+    margin: 5rem 6.4%;
+}
+
+.page-inner-container {
+    margin: 0 auto;
+    max-width: 650px;
+}

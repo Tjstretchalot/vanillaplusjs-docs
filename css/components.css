@@ -1,0 +1,137 @@
+/* #region BUTTONS */
+.link-button {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    cursor: default;
+    color: var(--col-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--col-accent);
+    cursor: pointer;
+}
+
+.link-button:visited {
+    color: var(--col-accent-dark);
+    text-decoration-color: var(--col-accent-dark);
+}
+
+.link-button:focus {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    cursor: default;
+    color: var(--col-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--col-accent);
+    cursor: pointer;
+}
+
+.link-button:focus-visible {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    cursor: default;
+    color: var(--col-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--col-accent);
+    cursor: pointer;
+    outline: 2px solid var(--col-accent);
+}
+
+.link-button:hover {
+    color: var(--col-accent-light);
+}
+
+.link-button:disabled {
+    color: var(--col-accent-light);
+    cursor: not-allowed;
+}
+
+/* #endregion */
+
+/* #region GITHUB BANNER */
+.github-banner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* #endregion */
+
+/* #region CODE TABS */
+.code-tabs {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.code-tablist {
+    display: flex;
+    flex-flow: row wrap;
+    margin: -16px 0 0 -16px;
+}
+
+.code-tab {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: inline-block;
+    cursor: default;
+    margin: 16px 0 0 16px;
+    padding: 12px;
+    font-family: arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.25;
+    color: var(--col-accent);
+    cursor: pointer;
+}
+
+.code-tab[aria-selected="true"] {
+    color: var(--col-accent-light);
+    font-weight: bold;
+    cursor: default;
+}
+
+.code-tab:focus-visible {
+    outline: 2px solid var(--col-accent);
+}
+
+.code-tabpanel {
+    margin: 0 auto;
+}
+
+/* #endregion */
