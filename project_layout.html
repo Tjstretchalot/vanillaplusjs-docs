@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport">
+<meta content="Vanilla Plus JS" property="og:site_name">
+<meta content="website" propety="og:type">
+
+    <meta content="Documentation: Project Layout" property="og:title">
+    <meta content="Explains the suggested directory structure and gitignore for Vanilla Plus JS projects." property="og:description">
+    <meta content="https://tjstretchalot.github.io/vanillaplusjs-docs/project_layout.html" property="og:url">
+    <link href="https://tjstretchalot.github.io/vanillaplusjs-docs/project_layout.html" rel="canonical">
+    <link href="/css/main.css?v=Ggryh3T0P88LY9J9MUH9GIHFmtnGnwAn9YtkPN8XGQY%3D&amp;pv=0.1.11" rel="stylesheet">
+<link href="/css/components.css?v=Ov_GvzzYL_kYnh5FE6Lm07pizsumB3l0VAFsGAZPzco%3D&amp;pv=0.1.11" rel="stylesheet">
+<link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=0.1.11" rel="stylesheet">
+<link href="/css/template.css?v=Q9xJXXNrp7Ac_Sp_DD8imPAwZdVn2a_0cFOEU8YgNbU%3D&amp;pv=0.1.11" rel="stylesheet">
+
+    <title>Project Layout: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <div class="github-banner-container">
+    <a href="https://github.com/tjstretchalot/vanillaplusjs"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+</div>
+
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Project Layout</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                Vanilla Plus JS requires some consistency in how projects are laid out to
+                reduce the configuration burden on the developer. This layout is initialized
+                for you when you run <code class="text-monospace">vanillaplusjs init</code>.
+                The core structure looks as follows:
+            </p>
+            <ul class="text-monospace">
+                <li>src/
+                    <ul>
+                        <li>public/
+                            <ul>
+                                <li>index.html</li>
+                                <li>img/</li>
+                                <li>js/</li>
+                            </ul>
+                        </li>
+                        <li>partials/</li>
+                    </ul>
+                </li>
+                <li>artifacts/</li>
+                <li>out/
+                    <ul>
+                        <li>www/</li>
+                    </ul>
+                </li>
+                <li>vanillaplusjs.json</li>
+            </ul>
+            <p>
+                The files that you want to serve generally go in
+                <code class="text-monospace">src/public/</code>. These will be used
+                to populate the <code class="text-monospace">out/</code> and
+                <code class="text-monospace">artifacts/</code> folders. In particular,
+                the files that should be served by your static file server are exclusively
+                contained in the <code class="text-monospace">out/www/</code> folder –
+                however if your operating system has symlink support (most non-Windows machines),
+                they may include symlinks. To build without symlinks, ensuring that you can
+                simply copy the contents of <code class="text-monospace">out/www/</code> to
+                your web server, you can use
+                <code class="text-monospace">vanillaplusjs build --no-symlinks</code>
+            </p>
+            <p>
+                The <code class="text-monospace">artifacts</code> folder is used for storing
+                post-processed images. These files can take a long time to produce, even compared
+                to their file size. Especially if you intend to use single-use machines for
+                deployment, it's better to have these artifacts downloaded rather than recreating
+                them, to keep the build time down. The recommended way of doing this is to
+                configure your repo to use
+                <a class="link-button" href="https://git-lfs.github.com/">Git Large File Storage</a>
+                (Git LFS) and include the following in your <code class="text-monospace">.gitattributes</code>
+                file:
+            </p>
+            <pre><code class="text-monospace">*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.webp filter=lfs diff=lfs merge=lfs -text
+src/public/assets/* filter=lfs diff=lfs merge=lfs -text</code></pre>
+            <p>
+                Then you can include the <code class="text-monospace">artifacts</code> folder in your
+                repository so it will be downloaded when pulling the repository
+                with Git LFS rather than being recreated. If you have a single
+                build machine which does not get cleared between builds then you
+                might not need to include the
+                <code class="text-monospace">artifacts</code> folder, but you
+                will still need Git LFS to handle the source images in your
+                project.
+            </p>
+            <p>
+                The <code class="text-monospace">src/partials</code> folder is used for storing
+                partial HTML files that are included using the preprocessor TEMPLATE command,
+                which is covered later.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/">Previous: Home</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: Cache-Busting</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/code_tabs.js?v=o6mrkzeLx-w5RWa-AbH8RYEaL8MlvqSoXBrNS9v6r50%3D&amp;pv=0.1.11" type="module"></script>
+
+
+
+
+</body></html>
