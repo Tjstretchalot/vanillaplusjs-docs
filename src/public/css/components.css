@@ -80,3 +80,53 @@
 }
 
 /* #endregion */
+
+/* #region CARD */
+.card {
+    max-width: 327px;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--col-accent);
+}
+
+.card-title {
+    /*! PREPROCESSOR: import .text-h4 */
+    color: var(--col-primary);
+}
+
+.card-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* #endregion */
+
+/* #region CARD LIST */
+.card-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: calc(-32px) 0 0 calc(-32px);
+    padding: 2rem 0 2rem 0;
+}
+
+.card-list>* {
+    margin: 32px 0 0 32px;
+}
+
+/* #endregion */
+
+/* #region DOC PAGINATION */
+.doc-pagination {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin: calc(-16px) 0 0 calc(-16px);
+    padding: 2rem 0 2rem 0;
+}
+
+.doc-pagination>* {
+    margin: 16px 0 0 16px;
+    /*! PREPROCESSOR: import .text-caption-1 */
+}
+
+/* #endregion */
