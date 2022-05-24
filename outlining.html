@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport">
+<meta content="Vanilla Plus JS" property="og:site_name">
+<meta content="website" propety="og:type">
+
+    <meta content="Documentation: Outlining" property="og:title">
+    <meta content="Explore how Vanilla Plus JS makes Content-Security-Policy easy to use." property="og:description">
+    <meta content="https://tjstretchalot.github.io/vanillaplusjs-docs/outlining.html" property="og:url">
+    <link href="https://tjstretchalot.github.io/vanillaplusjs-docs/outlining.html" rel="canonical">
+    <link href="/css/main.css?v=Ggryh3T0P88LY9J9MUH9GIHFmtnGnwAn9YtkPN8XGQY%3D&amp;pv=0.1.11" rel="stylesheet">
+<link href="/css/components.css?v=Ov_GvzzYL_kYnh5FE6Lm07pizsumB3l0VAFsGAZPzco%3D&amp;pv=0.1.11" rel="stylesheet">
+<link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=0.1.11" rel="stylesheet">
+<link href="/css/template.css?v=Q9xJXXNrp7Ac_Sp_DD8imPAwZdVn2a_0cFOEU8YgNbU%3D&amp;pv=0.1.11" rel="stylesheet">
+
+    <title>Outlining: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <div class="github-banner-container">
+    <a href="https://github.com/tjstretchalot/vanillaplusjs"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+</div>
+
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Outlining</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                <a class="link-button" href="https://en.wikipedia.org/wiki/Inline_expansion">Inline expansion</a>, or
+                inlining, generally refers to merging two different pieces of source code into a single
+                location for performance. A much less common technique is called outlining, where
+                a single piece of source code is split into multiple pieces. Vanilla Plus JS will extract
+                any script or style tags within your HTML files and move them into their own file
+                automatically. Furthermore, any SVGs which are included in your CSS files will be
+                extracted into their own file automatically. Hence, Vanilla Plus JS will <em>outline</em>
+                CSS, JS, and SVG files.
+            </p>
+            <p>
+                Although there is an argument this could improve average performance when combined
+                with the <a class="link-button" href="/cache_busting.html">cache</a> strategy
+                discussed earlier, that is not the primary reason for this outlining.
+            </p>
+            <p>
+                A <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">Content Security
+                    Policy</a>,
+                or CSP, is a modern technique to mitigate many common threats to web applications.
+                Though the developer cannot ignore these threats altogether, a strong CSP
+                lowers the threat surface and thus how much the developer needs to be concerned
+                about. A good basis for such a CSP is:
+            </p>
+            <pre><code class="text-monospace">Content-Security-Policy: default-src 'self'; object-src 'none';</code></pre>
+            <p>
+                This essentially states that the browser should not connect to any other
+                websites than the one serving the HTML file, and should not run any scripts
+                or images unless the server explicitly marks them as such. Furthermore, it
+                prevents the use of <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object">&lt;object&gt;</a>,
+                <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed">&lt;embed&gt;</a>,
+                and <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/applet">&lt;applet&gt;</a>
+                elements. This means that, short of writing scripts that are served directly
+                by your static web server with an executable
+                <a class="link-button" href="https://en.wikipedia.org/wiki/MIME_type">MIME type</a>,
+                which is a very unlikely scenario, the only scripts that will run on the browser
+                are those you wrote: preventing
+                <a class="link-button" href="https://portswigger.net/web-security/cross-site-scripting">cross-site
+                    scripting</a>
+                even if you would have otherwise been vulnerable.
+            </p>
+
+            <p>
+                One of the most important parts of a CSP is preventing inline
+                scripts, followed by inline styles and inline SVGs. That is
+                because these are the most straight-forward ways to exploit
+                unsanitized user input being displayed on the browser: a common
+                mistake which often goes unnoticed. However, without additional
+                tooling, this can lead to a worse developer experience, as it
+                is often convenient to use inline styles and scripts for one-off
+                behavior or for prototyping. Furthermore, these are often provided
+                in online examples or the documentation for how to integrate
+                libraries (most commonly analytics libraries). Even more difficult
+                to manage, minified CSS files typically have SVGs inlined to make
+                distribution simpler.
+            </p>
+
+            <p>
+                Fortunately, with Vanilla Plus JS you can still use a strong CSP
+                without changing your use of inline scripts and styles, as it will
+                automatically extract them into their own files and replace the
+                original inline tags with a link to the extracted file.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/cache_busting.html">Previous: Cache Busting</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/code_tabs.js?v=o6mrkzeLx-w5RWa-AbH8RYEaL8MlvqSoXBrNS9v6r50%3D&amp;pv=0.1.11" type="module"></script>
+
+
+
+
+</body></html>
