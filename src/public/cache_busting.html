@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[TEMPLATE: ["/head/standard.html"]]-->
+    <meta content="Documentation: Cache Busting" property="og:title">
+    <meta content="Explains how Vanilla Plus JS handles cache busting." property="og:description">
+    <meta property="og:url">
+    <link rel="canonical">
+    <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+    <title>Cache Busting: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <!--[TEMPLATE: ["/body/before.html"]]-->
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Cache Busting</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                <a class="link-button" href="https://en.wikipedia.org/wiki/Cache_(computing)">Cache</a>'s are
+                used as a way to avoid repeating work that has already been done &ndash; in this case,
+                downloading your CSS or JS files. On the web, browsers implement client-side caching through
+                the use of <a class="link-button"
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag">ETag</a>
+                and the more recent
+                <a class="link-button"
+                    href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control">Cache-Control</a>
+                headers.
+            </p>
+            <p>
+                Most static file servers, such as Nginx, will provide ETag caching out-of-the-box, with
+                no changes required. However, they will not automatically return Cache-Control headers,
+                and for good reason. ETag caching requires that the client verify their cache is up-to-date
+                before using it, via a
+                <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/304">304 Not
+                    Modified</a>
+                response. This means that clients will, in theory, get the benefits of caching while always
+                showing the most up-to-date file. On the contrary, Cache-Control headers may signal to the client
+                to not verify the cache is up-to-date before using it, meaning that the behavior of the clients
+                with cache-control headers may differ than from if they were not there at all.
+            </p>
+            <p>
+                Although such behavior from Cache-Control seems undesirable, it
+                can significantly reduce the load on the server and increase the
+                perceived loading speed of the site. This is because for small
+                files, it often takes almost the same amount of time to ask the
+                server if it's valid as it would have to download the file &ndash;
+                defeating the point of the cache!
+            </p>
+            <p>
+                Fortunately, for static files, it is possible to get most of the
+                benefits of Cache-Control while still providing the guarrantees
+                of ETag with only a <em>very</em> minor overhead. HTML files can
+                be served with ETag caching (or weak Cache-Control settings such
+                as <code class="text-monospace">must-revalidate</code>) to ensure the client has the
+                most up-to-date version. However, all subresources are specified
+                in the HTML file, and hence we can tell the client whether they
+                are up to date on those without an individual request per
+                subresource!
+            </p>
+            <p>
+                This is achieved by noting that browsers include the query parameters
+                in the cache, so Vanilla Plus JS injects a query parameter everywhere
+                you import a file which changes when that file changes. Thus even if
+                using strong cache-control settings (even <code class="text-monospace">immutable</code>),
+                the client will still download the file if it is not up-to-date. This
+                requires <strong>no source code changes</strong>.
+            </p>
+            <p>
+                However, to take advantage of this, the static file server must
+                provide the appropriate cache-control headers. The simplest setup
+                would simply have all svgs, css, and js files be served with
+                <code class="text-monospace">Cache-Control: public, max-age=604800, immutable</code>.
+                If you wanted to be a bit more careful, ensure that the files are
+                being accessed with the query parameters <code class="text-monospace">v</code>
+                and <code class="text-monospace">pv</code> (for version and processor
+                version) in that order.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/project_layout.html">Previous: Project Layout</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[TEMPLATE: ["/body/after.html"]]-->
+</body>
+
+</html>
