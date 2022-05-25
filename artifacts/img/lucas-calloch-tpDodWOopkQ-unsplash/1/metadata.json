@@ -1,7 +1,7 @@
 {
   "settings_hash": 5478490489390831371,
   "source": {
-    "path": "src\\public\\img\\lucas-calloch-tpDodWOopkQ-unsplash.jpg",
+    "path": "src/public/img/lucas-calloch-tpDodWOopkQ-unsplash.jpg",
     "width": 4563,
     "height": 7952,
     "contents_hash": "WMWxyrTNUb7iGykgteXEq2qfndiioUVvhOC8hnkVtck="
@@ -25,79 +25,79 @@
         {
           "width": 650,
           "height": 1132,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\650x1132.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/650x1132.jpeg",
           "choice": "85"
         },
         {
           "width": 975,
           "height": 1698,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\975x1698.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/975x1698.jpeg",
           "choice": "85"
         },
         {
           "width": 1300,
           "height": 2264,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\1300x2264.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/1300x2264.jpeg",
           "choice": "85"
         },
         {
           "width": 1625,
           "height": 2830,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\1625x2830.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/1625x2830.jpeg",
           "choice": "85"
         },
         {
           "width": 1950,
           "height": 3396,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\1950x3396.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/1950x3396.jpeg",
           "choice": "85"
         },
         {
           "width": 2275,
           "height": 3962,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\2275x3962.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/2275x3962.jpeg",
           "choice": "85"
         },
         {
           "width": 2600,
           "height": 4528,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\2600x4528.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/2600x4528.jpeg",
           "choice": "85"
         },
         {
           "width": 2925,
           "height": 5094,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\2925x5094.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/2925x5094.jpeg",
           "choice": "85"
         },
         {
           "width": 3250,
           "height": 5660,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\3250x5660.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/3250x5660.jpeg",
           "choice": "85"
         },
         {
           "width": 3575,
           "height": 6226,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\3575x6226.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/3575x6226.jpeg",
           "choice": "85"
         },
         {
           "width": 3900,
           "height": 6792,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\3900x6792.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/3900x6792.jpeg",
           "choice": "85"
         },
         {
           "width": 4225,
           "height": 7358,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\4225x7358.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/4225x7358.jpeg",
           "choice": "85"
         },
         {
           "width": 4550,
           "height": 7924,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\4550x7924.jpeg",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/4550x7924.jpeg",
           "choice": "85"
         }
       ],
@@ -105,79 +105,79 @@
         {
           "width": 650,
           "height": 1132,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\650x1132.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/650x1132.webp",
           "choice": "85"
         },
         {
           "width": 975,
           "height": 1698,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\975x1698.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/975x1698.webp",
           "choice": "85"
         },
         {
           "width": 1300,
           "height": 2264,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\1300x2264.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/1300x2264.webp",
           "choice": "75"
         },
         {
           "width": 1625,
           "height": 2830,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\1625x2830.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/1625x2830.webp",
           "choice": "75"
         },
         {
           "width": 1950,
           "height": 3396,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\1950x3396.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/1950x3396.webp",
           "choice": "75"
         },
         {
           "width": 2275,
           "height": 3962,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\2275x3962.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/2275x3962.webp",
           "choice": "75"
         },
         {
           "width": 2600,
           "height": 4528,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\2600x4528.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/2600x4528.webp",
           "choice": "75"
         },
         {
           "width": 2925,
           "height": 5094,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\2925x5094.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/2925x5094.webp",
           "choice": "75"
         },
         {
           "width": 3250,
           "height": 5660,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\3250x5660.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/3250x5660.webp",
           "choice": "75"
         },
         {
           "width": 3575,
           "height": 6226,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\3575x6226.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/3575x6226.webp",
           "choice": "75"
         },
         {
           "width": 3900,
           "height": 6792,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\3900x6792.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/3900x6792.webp",
           "choice": "75"
         },
         {
           "width": 4225,
           "height": 7358,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\4225x7358.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/4225x7358.webp",
           "choice": "75"
         },
         {
           "width": 4550,
           "height": 7924,
-          "relpath": "img\\lucas-calloch-tpDodWOopkQ-unsplash\\1\\4550x7924.webp",
+          "relpath": "img/lucas-calloch-tpDodWOopkQ-unsplash/1/4550x7924.webp",
           "choice": "75"
         }
       ]
