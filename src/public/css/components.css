@@ -130,3 +130,20 @@
 }
 
 /* #endregion */
+
+/* #region IMAGE WITH CAPTION */
+.image-with-caption {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+}
+
+.image-with-caption img {
+    width: 100%;
+}
+
+.image-with-caption .text-caption-1 {
+    margin-top: 8px;
+}
+
+/* #endregion */
