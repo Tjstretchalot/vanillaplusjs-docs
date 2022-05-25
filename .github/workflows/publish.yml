@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: git-checkout
         uses: actions/checkout@v2
+        with:
+          lfs: "true"
 
       - name: Install all dependencies
         run: pip install vanillaplusjs
