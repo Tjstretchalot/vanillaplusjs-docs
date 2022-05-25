@@ -1,15 +1,15 @@
-/* https://coolors.co/333333-643173-7d5ba6-86a59c-89ce94 */
+/* https://reasonable.work/colors/ primary: sky, secondary: gray, accent: green */
 :root {
-    --col-background: #333333;
-    --col-line: #643173;
-    --col-primary: #7d5ba6;
-    --col-primary-light: #967AB8;
-    --col-secondary-dark: #6FC37D;
-    --col-secondary: #89ce94;
-    --col-secondary-light: #A9DBB1;
-    --col-accent-dark: #72978D;
-    --col-accent: #86a59c;
-    --col-accent-light: #A1BAB3;
+    --col-background: #e3f7ff;
+    --col-line: #aee9ff;
+    --col-primary: #00404f;
+    --col-primary-light: #007590;
+    --col-secondary-dark: #222222;
+    --col-secondary: #3e3e3e;
+    --col-secondary-light: #6f6f6f;
+    --col-accent-dark: #062800;
+    --col-accent: #004908;
+    --col-accent-light: #008217;
 }
 
 * {
