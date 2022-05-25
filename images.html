@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport">
+<meta content="Vanilla Plus JS" property="og:site_name">
+<meta content="website" propety="og:type">
+
+    <meta content="Documentation: Images" property="og:title">
+    <meta content="Explore seamless image preprocessing in Vanilla Plus JS" property="og:description">
+    <meta content="https://vanillaplusjs.com/images.html" property="og:url">
+    <link href="https://vanillaplusjs.com/images.html" rel="canonical">
+    <link href="/css/main.css?v=oP7UQnvxcbGkV3aH7meXBeXUwhnk49xIVlua2fgkIYA%3D&amp;pv=0.1.14" rel="stylesheet">
+<link href="/css/components.css?v=ezLf5tGPfBCoMcFBOT5yQzwx9U2ghL8FRhuBr38QQ7M%3D&amp;pv=0.1.14" rel="stylesheet">
+<link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=0.1.14" rel="stylesheet">
+<link href="/css/template.css?v=lS0HB46lWG9tMzgVyaTvqsFvw3v0bNh1D19o72cICAw%3D&amp;pv=0.1.14" rel="stylesheet">
+
+    <title>Images: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <div class="github-banner-container">
+    <a href="https://github.com/tjstretchalot/vanillaplusjs"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+</div>
+
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Images</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+
+            <div class="image-with-caption">
+                <!--[IMAGE: /img/lucas-calloch-tpDodWOopkQ-unsplash.jpg 650 1132]-->
+                <div class="text-caption-1">by Lucas Calloch via <a class="link-button" href="https://unsplash.com/photos/tpDodWOopkQ">unsplash</a></div>
+            </div>
+            <p>
+                Images add a critical element to any website - as a means of communication
+                or simply to set the scene. Finding the right image for your project can
+                be challenging, but serving it should not be. Although the native
+                <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">&lt;img&gt;</a>
+                element is powerful, it doesn't take full advantage of modern advances in
+                image distribution.
+            </p>
+            <p>
+                For one, there are many better image formats than
+                <a class="link-button" href="https://en.wikipedia.org/wiki/JPEG">JPEG</a> -
+                such as <a class="link-button" href="https://developers.google.com/speed/webp">WebP</a>.
+                They are smaller and more versatile, and are supported by many modern browsers. Additionally,
+                with devices ranging from tiny androids to the largest desktop screens, there is no
+                one size fits all resolution to provide. Choose too small a resolution and it's blurry
+                on high-definition devices. Choose too large a resolution and mobile users might back
+                out before the image even loads.
+            </p>
+            <p>
+                Fortunately, Vanilla Plus JS provides a simple preprocessing command to take
+                any image, convert it to the appropriate formats and resolutions, and bundle
+                them into a
+                <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture">picture</a>
+                element. This means the browser will choose the best format and resolution for the
+                device, with no additional configuration required.
+            </p>
+
+            <p>
+                To get started, simply add the desired image within your
+                <code class="text-monospace">src/public/img/</code> folder,
+                and then add the following code to your HTML file to generate
+                the picture element:
+            </p>
+
+            <pre><code class="text-monospace">&lt;!--[IMAGE: /img/example.jpg 300 400]--&gt;</code></pre>
+
+            <p>
+                This will generate a picture element whose source comes from the
+                post-processed representations of the image, cropped to the
+                desired aspect ratio (in this case, 300x400), and scaled to the
+                appropriate device resolution. If you're curious how this picture
+                element looks or how to style it, just inspect this page or check
+                out the
+                <a class="link-button" href="https://github.com/Tjstretchalot/vanillaplusjs-docs/blob/main/src/public/images.html">source
+                    code</a>.
+            </p>
+
+            <p>
+                This accepts more arguments, though the defaults are usually
+                sufficient. The format is:
+            </p>
+
+            <pre><code class="text-monospace">path width height [cover] [crop_arguments] [lazy OR eager]</code></pre>
+
+            <p>
+                Where <code class="text-monospace">cover</code>, <code class="text-monospace">lazy</code>,
+                and <code class="text-monospace">eager</code> are literal strings. The crop
+                arguments are specified as a json object. The object must be a subset of the
+                following, where the values in the example are the default values if not
+                specified:
+            </p>
+            <pre><code class="text-monospace">{
+    "crop_left_percentage": 0.5,
+    "crop_top_percentage": 0.5,
+    "pre_top_crop": 0,
+    "pre_left_crop": 0,
+    "pre_right_crop": 0,
+    "pre_bottom_crop": 0
+}</code></pre>
+
+            <p>
+                Where <code class="text-monospace">crop_left_percentage</code> dictates
+                the proportion to crop from the left when we need to crop the image to
+                be thinner to match the aspect ratio. The default value of 0.5 means crop
+                evenly from the left and the right, a value of 0 would mean crop exclusively
+                from the right. Similarly, <code class="text-monospace">crop_top_percentage</code>
+                dictates the proportion to crop from the top when we need to crop the image
+                to be shorter to match the aspect ratio.
+            </p>
+            <p>
+                Further, <code class="text-monospace">pre_top_crop</code> simply
+                crops the given number of pixels from the top of the image
+                before applying the standard cover fit algorithm. <code class="text-monospace">pre_left_crop</code>,
+                <code class="text-monospace">pre_right_crop</code>, and <code class="text-monospace">pre_bottom_crop</code> similarly crop the
+                given number of pixels from the left, right, and bottom of the
+                image respectively.
+            </p>
+
+            <p>
+                Finally, <code class="text-monospace">lazy</code> and <code class="text-monospace">eager</code> are used
+                to specify whether
+                the image should be loaded asynchronously or not. By default, images
+                are loaded asynchronously on supporting browsers via the
+                <code class="text-monospace">lazy</code> property, but you may
+                specify <code class="text-monospace">eager</code> to load the image
+                before continuing to the next element.
+            </p>
+
+            <p>
+                That covers how to use the image preprocessing. For a bit more
+                detail in how it works, it will sample various compression levels
+                and resolutions on the first pass. It will prefer lower compression
+                levels and also lower file sizes. These two things are in conflict,
+                so the calculation is managed by assigning a "preference" to each
+                compression level in <code class="text-monospace">vanillaplusjs.json</code>,
+                and then to compare two compression levels we divide the file size
+                by the preference to get a penalty for each, then select the
+                compression level with the lowest penalty. We repeat this for each
+                resolution.
+            </p>
+
+            <p>
+                To avoid edge-cases where very small files are compressed exceptionally
+                well, a minimum unit size is specified, where there is no decreased
+                penalty below that file size. Furthermore, the resolution we are
+                attempting will rule out certain compression levels, and hence the
+                build time is dramatically reduced by not attempting those. For example,
+                it will never make sense to compress a 300x300 image to 50% quality,
+                or to use a lossless format for a 3000x3000 image. And generating that
+                lossless format to test its size can take upwards of a minute. This is
+                what the <code class="text-monospace">min_area_px2</code>
+                and <code class="text-monospace">max_area_px2</code> parameters describe.
+            </p>
+
+            <p>
+                Processing is done with
+                <a class="link-button" href="https://pillow.readthedocs.io/">Pillow</a>,
+                so you can use any image format or compression level supported by that
+                library in the configuration.
+            </p>
+
+            <h2>JavaScript</h2>
+
+            <p>
+                Although producing the picture element covers most use-cases for
+                images, it's sometimes convenient to use the preprocessor to generate
+                images which are then converted to HTML code in JavaScript. This is
+                typically for more dynamic pages, where the page layout is generated
+                on the fly.
+            </p>
+
+            <p>
+                It would be possible, although painful, to generate hidden picture
+                elements and then parse the element to determine where the image
+                is located. However, Vanilla Plus JS provides a direct way to
+                accomplish this via <code class="text-monospace">.images.json</code>
+                files, which are handled specially by the preprocessor.
+            </p>
+
+            <p>
+                Suppose you had a highly dynamic profile page which required a
+                default avatar image which you want to display via JavaScript
+                after determining the user does not have a profile picture set.
+                You could create the following file at
+                <code class="text-monospace">src/public/js/profile.images.json</code>:
+            </p>
+
+            <pre><code class="text-monospace">{
+    "default_avatar": {
+        "path": "/img/default_avatar.jpg",
+        "width": 20,
+        "height": 20,
+        "crop_style": "cover",
+        "crop_arguments": {},
+        "lazy": true
+    }
+}</code></pre>
+
+            <p>
+                Then the preprocessor will generate a file at
+                <code class="text-monospace">src/public/js/profile.images.js</code>
+                with content like the following:
+            </p>
+
+            <pre><code class="text-monospace">export default {
+    "default_avatar": {
+        "target": {
+            "outputs": {
+                "jpeg": [
+                    {
+                        "choice": "100",
+                        "height": 20,
+                        "url": "/img/default_avatar/1/20x20.jpeg",
+                        "width": 20
+                    },
+                    {
+                        "choice": "100",
+                        "height": 30,
+                        "url": "/img/default_avatar/1/30x30.jpeg",
+                        "width": 30
+                    }
+                ],
+                "webp": [
+                    {
+                        "choice": "lossless",
+                        "height": 20,
+                        "url": "/img/default_avatar/1/20x20.webp",
+                        "width": 20
+                    },
+                    {
+                        "choice": "lossless",
+                        "height": 30,
+                        "url": "/img/default_avatar/1/30x30.webp",
+                        "width": 30
+                    }
+                ]
+            },
+            "settings": {
+                "crop": "cover",
+                "crop_settings": {
+                    "crop_left_percentage": 0.5,
+                    "crop_top_percentage": 0.5,
+                    "pre_bottom_crop": 0,
+                    "pre_left_crop": 0,
+                    "pre_right_crop": 0,
+                    "pre_top_crop": 0
+                },
+                "height": 20,
+                "width": 20
+            }
+        }
+    }
+};</code></pre>
+
+            <p>
+                Which can be imported into JavaScript as follows:
+            </p>
+
+            <pre><code class="text-monospace">import images from '/js/profile.images.js';</code></pre>
+
+            <p>
+                Furthermore, it will generate a placeholder file at
+                <code class="text-monospace">src/public/js/profile.images.js</code> with
+                the appropriate typehints to ensure that it nicely integrates with
+                your IDE.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/outlining.html">Previous: Outlining</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/code_tabs.js?v=o6mrkzeLx-w5RWa-AbH8RYEaL8MlvqSoXBrNS9v6r50%3D&amp;pv=0.1.14" type="module"></script>
+
+
+
+
+</body></html>

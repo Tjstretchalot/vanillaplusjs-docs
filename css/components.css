@@ -115,7 +115,7 @@
     font-family: arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    letter-spacing: 0.25;
+    letter-spacing: 0.25px;
     color: var(--col-accent);
     cursor: pointer;
 }
@@ -186,7 +186,24 @@
     font-family: arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    letter-spacing: 0.25;
+    letter-spacing: 0.25px;
+}
+
+/* #endregion */
+
+/* #region IMAGE WITH CAPTION */
+.image-with-caption {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+}
+
+.image-with-caption img {
+    width: 100%;
+}
+
+.image-with-caption .text-caption-1 {
+    margin-top: 8px;
 }
 
 /* #endregion */

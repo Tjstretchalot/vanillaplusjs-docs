@@ -43,7 +43,7 @@ h5 {
     font-family: arial, sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    letter-spacing: 0.25;
+    letter-spacing: 0.25px;
     color: var(--col-accent);
     margin-bottom: 0.5rem;
 }
