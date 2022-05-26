@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport">
+<meta content="Vanilla Plus JS" property="og:site_name">
+<meta content="website" propety="og:type">
+
+    <meta content="Documentation: External Files" property="og:title">
+    <meta content="How to distribute external files with Vanilla Plus JS" property="og:description">
+    <meta content="https://vanillaplusjs.com/external_files.html" property="og:url">
+    <link href="https://vanillaplusjs.com/external_files.html" rel="canonical">
+    <link href="/css/main.css?v=2T12PqYMFIWtRwsw_ZbvImEnSivTv27MHOWon4VEz-I%3D&amp;pv=0.1.20" rel="stylesheet">
+<link href="/css/components.css?v=jA8gohw_OJVMTQ701MWf0j8wRBAM4cH8QbhTbzxAaCs%3D&amp;pv=0.1.20" rel="stylesheet">
+<link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=0.1.20" rel="stylesheet">
+<link href="/css/template.css?v=LeCXoQVdI66dEZmzUR3GjCtgOVRAx21XuNaJpIL52L8%3D&amp;pv=0.1.20" rel="stylesheet">
+
+    <title>External Files: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <div class="github-banner-container">
+    <a href="https://github.com/tjstretchalot/vanillaplusjs"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+</div>
+
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">External Files</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                Many projects are built on top of existing libraries, such as
+                <a class="link-button" href="https://getbootstrap.com/">Bootstrap</a> or
+                <a class="link-button" href="https://mui.com/material-ui/getting-started/installation/#cdn">Material
+                    UI</a>
+                which offer distribution via a CDN. However, serving the files
+                from the CDN is not usually the best option - it would require a
+                less strict Content Security Policy and
+                <a class="link-button" href="https://www.peakhour.io/blog/cache-partitioning-firefox-chrome/">no longer
+                    benefits from a shared cache.</a> Hence it's better to serve the files
+                directly from your own server in the same manner you distribute your other
+                static assets.
+            </p>
+            <p>
+                However, ease of deployment is a big concern, since nearly every web project
+                is a good target for <a class="link-button" href="https://en.wikipedia.org/wiki/CI/CD">continuous
+                    integration and continuous delivery (CI/CD)</a>. Hence one might be tempted to
+                actually store these external files in their own repository. This is definitely
+                simple from a CI/CD perspective, but makes versioning a pain and leads to spuriously
+                large commits and repositories.
+            </p>
+            <p>
+                To avoid this issue, Vanilla Plus JS can be configured to have source code files
+                downloaded if they do not exist. After downloading they will go through
+                standard processing – which will also make them CSP-friendly, even if they
+                otherwise might not be. For example, the inline SVGs in many minified CSS files will
+                be outlined for you. The following is an example of how to configure
+                <code class="text-monospace">vanillaplusjs.json</code> to download (or update) bootstrap
+                if it's not available (or is out of date). Note that the parts of the
+                configuration not related to external files are not shown.
+            </p>
+            <pre><code class="text-monospace">{
+    "external_files": {
+        "src/public/css/lib/bootstrap.min.css": {
+            "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css",
+            "integrity": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+        },
+        "src/public/js/lib/bootstrap.min.js": {
+            "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js",
+            "integrity": "sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        }
+    }
+}</code>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/css_imports.html">Previous: CSS Imports</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </pre></div>
+    </div>
+    <script src="/js/code_tabs.js?v=o6mrkzeLx-w5RWa-AbH8RYEaL8MlvqSoXBrNS9v6r50%3D&amp;pv=0.1.20" type="module"></script>
+
+
+
+
+</body></html>
