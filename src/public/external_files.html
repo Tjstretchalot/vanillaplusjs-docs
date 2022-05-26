@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[TEMPLATE: ["/head/standard.html"]]-->
+    <meta content="Documentation: External Files" property="og:title">
+    <meta content="How to distribute external files with Vanilla Plus JS" property="og:description">
+    <meta property="og:url">
+    <link rel="canonical">
+    <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+    <title>External Files: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <!--[TEMPLATE: ["/body/before.html"]]-->
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">External Files</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                Many projects are built on top of existing libraries, such as
+                <a class="link-button" href="https://getbootstrap.com/">Bootstrap</a> or
+                <a class="link-button" href="https://mui.com/material-ui/getting-started/installation/#cdn">Material
+                    UI</a>
+                which offer distribution via a CDN. However, serving the files
+                from the CDN is not usually the best option - it would require a
+                less strict Content Security Policy and
+                <a class="link-button" href="https://www.peakhour.io/blog/cache-partitioning-firefox-chrome/">no longer
+                    benefits from a shared cache.</a> Hence it's better to serve the files
+                directly from your own server in the same manner you distribute your other
+                static assets.
+            </p>
+            <p>
+                However, ease of deployment is a big concern, since nearly every web project
+                is a good target for <a class="link-button" href="https://en.wikipedia.org/wiki/CI/CD">continuous
+                    integration and continuous delivery (CI/CD)</a>. Hence one might be tempted to
+                actually store these external files in their own repository. This is definitely
+                simple from a CI/CD perspective, but makes versioning a pain and leads to spuriously
+                large commits and repositories.
+            </p>
+            <p>
+                To avoid this issue, Vanilla Plus JS can be configured to have source code files
+                downloaded if they do not exist. After downloading they will go through
+                standard processing &ndash; which will also make them CSP-friendly, even if they
+                otherwise might not be. For example, the inline SVGs in many minified CSS files will
+                be outlined for you. The following is an example of how to configure
+                <code class="text-monospace">vanillaplusjs.json</code> to download (or update) bootstrap
+                if it's not available (or is out of date). Note that the parts of the
+                configuration not related to external files are not shown.
+            </p>
+            <pre><code class="text-monospace">{
+    "external_files": {
+        "src/public/css/lib/bootstrap.min.css": {
+            "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css",
+            "integrity": "sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+        },
+        "src/public/js/lib/bootstrap.min.js": {
+            "url": "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js",
+            "integrity": "sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        }
+    }
+}</code>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/css_imports.html">Previous: CSS Imports</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[TEMPLATE: ["/body/after.html"]]-->
+</body>
+
+</html>
