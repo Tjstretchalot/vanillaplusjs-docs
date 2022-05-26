@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[TEMPLATE: ["/head/standard.html"]]-->
+    <meta content="Documentation: CSS Imports" property="og:title">
+    <meta content="How to implement CSS inheritance with Vanilla Plus JS" property="og:description">
+    <meta property="og:url">
+    <link rel="canonical">
+    <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+    <title>CSS Imports: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <!--[TEMPLATE: ["/body/before.html"]]-->
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">CSS Imports</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                Although <a class="link-button"
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS custom
+                    properties</a>
+                significantly reduce the need for general CSS preprocessing, there are
+                still a handful of circumstances where there is a lot of style repetition
+                due to the lack of inheritance support. In particular, unstyling buttons and
+                focus states to have the same appearance on all browsers is quite repetitive,
+                and typography can have multiple parts (e.g.,
+                <code class="text-monospace">font-family</code> and <code class="text-monospace">font-size</code>)
+                which makes custom properties less useful.
+            </p>
+
+            <p>
+                Vanilla Plus JS provides a preprocessor command to include the directives within a different
+                <a class="link-button" href="https://www.w3.org/TR/css-syntax-3/#qualified-rule">qualified rule</a>
+                into the current one. This does not create additional declarations and thus the
+                rules prelude must be specified exactly. It will not copy over additional
+                styles if the rule is overriden in various at-rules - it will only take the
+                top-level qualified rule matching the given prelude. The behavior is <strong>undefined</strong>
+                when multiple matching top-level qualified rules exist - for performance, the
+                imported file may be in any state of parsing after completely determining the
+                first matching top-level qualified rule, and hence, Vanilla Plus JS may not
+                behave consistently.
+            </p>
+
+            <p>
+                Imports will come from the default CSS file (typically
+                <code class="text-monospace">src/public/css/main.css</code>) unless
+                otherwise indicated. Here is an example that would work within the
+                default CSS file:
+            </p>
+
+            <pre><code class="text-monospace">.text-body-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+p {
+    /*! PREPROCESSOR: import .text-body-1 */
+}</code></pre>
+
+            <p>
+                The above example would be equivalent to:
+            </p>
+            <pre><code class="text-monospace">.text-body-1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+}</code></pre>
+
+            <p>
+                The file to import from can be specified in the preprocessor directive:
+            </p>
+
+            <pre><code class="text-monospace">p {
+    /*! PREPROCESSOR: import .text-body-1 FROM /css/typography.css */
+}</code></pre>
+
+            <p>
+                Where the file is specified relative to the <code class="text-monospace">src/public</code>
+                directory. You may reference rules within the same file before they are
+                declared, and you may reference rules within another file, but you cannot
+                cause circular file dependencies or circular rule dependencies. Build times
+                are improved by having more commonly imported styles near the top of the
+                file in the order they are needed, though this is rarely an issue if file
+                sizes are kept reasonable.
+            </p>
+
+            <p>
+                This is related to but not quite the same as nesting support, which you
+                can follow the <a class="link-button" href="https://www.w3.org/TR/css-nesting-1/">W3C Working Draft</a>
+                for.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/templates.html">Previous: Templates</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[TEMPLATE: ["/body/after.html"]]-->
+</body>
+
+</html>
