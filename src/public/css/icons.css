@@ -1,2 +1,11 @@
 /*! PREPROCESSOR: icon success primary all-colors all-sizes */
 /*! PREPROCESSOR: icon error primary all-colors all-sizes */
+/*! PREPROCESSOR: icon eye primary
+    all-colors
+    all-sizes
+    {
+        "default": ["primary", "primary-dark", "disabled"],
+        "secondary": ["secondary", "secondary-dark", "disabled"],
+        "accent": ["accent", "accent-dark", "disabled"]
+    }
+*/
