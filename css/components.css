@@ -195,11 +195,17 @@
 .image-with-caption {
     display: flex;
     flex-flow: column nowrap;
-    align-items: flex-end;
+    align-items: center;
+}
+
+.image-with-caption picture {
+    width: 100%;
+    max-width: 650px;
 }
 
 .image-with-caption img {
     width: 100%;
+    height: auto;
 }
 
 .image-with-caption .text-caption-1 {
