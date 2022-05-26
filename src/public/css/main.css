@@ -2,6 +2,7 @@
 :root {
     --col-background: #e3f7ff;
     --col-line: #aee9ff;
+    --col-primary-dark: #001f28;
     --col-primary: #00404f;
     --col-primary-light: #007590;
     --col-secondary-dark: #222222;
@@ -10,6 +11,11 @@
     --col-accent-dark: #062800;
     --col-accent: #004908;
     --col-accent-light: #008217;
+    --col-disabled: #8b8b8b;
+
+    --icon-size-small: 0.75rem;
+    --icon-size-medium: 1rem;
+    --icon-size-large: 1.25rem;
 }
 
 * {

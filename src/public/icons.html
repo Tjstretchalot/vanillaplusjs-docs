@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[TEMPLATE: ["/head/standard.html"]]-->
+    <meta content="Documentation: Icons" property="og:title">
+    <meta content="Create easy-to-use icons and buttons using Vanilla Plus JS." property="og:description">
+    <meta property="og:url">
+    <link rel="canonical">
+    <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+    <link href="/css/icons.css" rel="stylesheet">
+    <title>Icons: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <!--[TEMPLATE: ["/body/before.html"]]-->
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Icons</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+
+            <p>
+                Icons are a great way to communicate information to users in a small
+                amount of space. Whether to indicate <span class="icon-success-medium-primary-dark"></span>
+                success or <span class="icon-error-medium-primary-dark"></span> error, they
+                are friendlier and more recognizable than text. However, creating them
+                in a strong CSP environment can be tedious, especially when you have
+                a lot of them and need them in a lot of colors and sizes.
+            </p>
+
+            <p>
+                Fortunately, Vanilla Plus JS comes with a preprocessor command to make
+                working with SVG icons extremely easy. Assuming you have an SVG with
+                a single color in it at <code class="text-monospace">src/public/img/icons/my-icon.svg</code>,
+                and that color matches your primary color as specified in your default
+                css file (typically <code class="text-monospace">src/public/css/main.css</code>),
+                the following snippet in a CSS file will generate the icon in all of your
+                UI kits sizes and colors:
+            </p>
+
+            <pre><code class="text-monospace">/*! PREPROCESSOR: icon my-icon primary all-colors all-sizes */</code></pre>
+
+            <p>
+                If, for example, your UI kit sizes and colors are
+            </p>
+
+            <pre><code class="text-monospace">:root {
+    --col-primary: #333;
+    --col-primary-dark: #000;
+    --col-primary-light: #666;
+    --col-disabled: #CCC;
+    --icon-size-large: 1.5rem;
+    --icon-size-medium: 1rem;
+    --icon-size-small: 0.75rem;
+}</code></pre>
+
+            <p>
+                Then it would generate the following classes:
+
+            <ul class="text-body-1">
+                <li>.icon-my-icon-large-primary</li>
+                <li>.icon-my-icon-large-primary-dark</li>
+                <li>.icon-my-icon-large-primary-light</li>
+                <li>.icon-my-icon-medium-primary</li>
+                <li>.icon-my-icon-medium-primary-dark</li>
+                <li>.icon-my-icon-medium-primary-light</li>
+                <li>.icon-my-icon-small-primary</li>
+                <li>.icon-my-icon-small-primary-dark</li>
+                <li>.icon-my-icon-small-primary-light</li>
+                <li>.icon-btn-my-icon-large</li>
+                <li>.icon-btn-my-icon-medium</li>
+                <li>.icon-btn-my-icon-small</li>
+            </ul>
+            </p>
+
+            <p>
+                The button class will use your primary color, with primary-dark for
+                hover and disabled for disabled. For example, here is the success
+                icons automatically generated button:
+                <button class="icon-btn-success-medium">
+                    <span class="icon-btn--icon"></span>
+                </button>
+            </p>
+
+            <p>
+                To use automatically generated buttons it needs one span in the middle
+                which will be used for the icon:
+            </p>
+
+            <pre><code class="text-monospace">&lt;button class="icon-btn-success-medium"&gt;
+    &lt;span class="icon-btn--icon"&gt;&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </code></pre>
+
+            <p>
+                In case you need the generated SVGs outside of these classes, their
+                location is guarranteed and follows a simple pattern:
+                <code class="text-monospace">/img/icons/&lt;NAME&gt;/&lt;COLOR&gt;.svg</code>
+            </p>
+            <p>
+                For example,
+                <code class="text-monospace">/img/icons/success/primary.svg</code> is
+                the location of the <code class="text-monospace">success</code> icon in
+                the <code class="text-monospace">primary</code> color.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/images.html">Previous: Images</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[TEMPLATE: ["/body/after.html"]]-->
+</body>
+
+</html>

@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -36,4 +41,10 @@ h5 {
 
 p {
     /*! PREPROCESSOR: import .text-body-1 */
+}
+
+@media screen and (max-width: 1400px) {
+    pre {
+        overflow-x: auto;
+    }
 }
