@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[TEMPLATE: ["/head/standard.html"]]-->
+    <meta content="Documentation: Constants" property="og:title">
+    <meta content="How to configure environments with Vanilla Plus JS" property="og:description">
+    <meta property="og:url">
+    <link rel="canonical">
+    <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+    <title>Constants: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <!--[TEMPLATE: ["/body/before.html"]]-->
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Constants</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                It can be helpful to have some minor differences between the production
+                and development environments. Primarily, in production it's common practice
+                to serve your API server and static assets via the same port, but it's much
+                more convenient to use different ports &ndash; or completely different urls &ndash;
+                locally. Vanilla Plus JS allows you to configure constants which depend on
+                if the server was built for production (<code class="text-monospace">vanillaplusjs build</code>)
+                or development (<code class="text-monospace">vanillaplusjs dev --watch</code>).
+            </p>
+            <p>
+                To enable this feature you will need to create the placeholder constants file,
+                which is typically used for type hints and is usually located at
+                <code class="text-monospace">src/public/js/constants.js</code>. Then it is
+                configured via <code class="text-monospace">vanillaplusjs.json</code>. The
+                default configuration is as follows (note that parts not pertaining to
+                constants are not shown):
+            </p>
+            <pre><code class="text-monospace">{
+    "js_constants": {
+        "relpath": "src/public/js/constants.js",
+        "shared": {},
+        "dev": {
+            "API_URL": "http://127.0.0.1:8080"
+        },
+        "prod": {
+            "API_URL": ""
+        }
+    }
+}</code></pre>
+
+            <p>
+                This will generate a file which depends on the environment. In
+                development it would be:
+            </p>
+
+            <pre><code class="text-monospace">export const API_URL = "http://127.0.0.1:8080";</code></pre>
+
+            <p>
+                And in production it would be:
+            </p>
+
+            <pre><code class="text-monospace">export const API_URL = "";</code></pre>
+
+            <p>
+                This could be used, for example, to make a
+                <a class="link-button"
+                    href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fetch</a>
+                wrapper as follows:
+            </p>
+
+            <pre><code class="text-monospace">import { API_URL } from "/js/constants.js";
+
+
+export function apiFetch(url, options) {
+    if (url.startsWith("/")) {
+        url = API_URL + url;
+    }
+
+    return fetch(url, options);
+};</code></pre>
+
+            <p>
+                The constants dictionary will be initialized with the shared values
+                and then updated with the environment values. The actual contents of the
+                constants file in your src directory will be ignored, but the file must exist
+                for the output to be generated.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/external_files.html">Previous: External Files</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[TEMPLATE: ["/body/after.html"]]-->
+</body>
+
+</html>

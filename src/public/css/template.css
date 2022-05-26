@@ -48,3 +48,8 @@ p {
         overflow-x: auto;
     }
 }
+
+pre {
+    border-left: 3px solid var(--col-primary-dark);
+    padding-left: 1rem;
+}
