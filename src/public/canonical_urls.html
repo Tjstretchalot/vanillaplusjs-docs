@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[TEMPLATE: ["/head/standard.html"]]-->
+    <meta content="Documentation: Canonical URLs" property="og:title">
+    <meta content="How to avoid absolute URLs with Vanilla Plus JS" property="og:description">
+    <meta property="og:url">
+    <link rel="canonical">
+    <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+    <title>Constants: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <!--[TEMPLATE: ["/body/before.html"]]-->
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Canonical URLs</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                Many projects can get away without specifying their absolute URL
+                anywhere outside of configuration. This is advantageous, since it allows
+                the project to be deployed to any domain, and it allows the projects
+                code to be shared with other developers. Unfortunately, there are a
+                few cases where, for SEO purposes, the absolute URL is preferred.
+                Fortunately, Vanilla Plus JS will convert relative URLs to absolute
+                URLs in this context.
+            </p>
+
+            <p>
+                First, configure <code class="text-monospace">vanillaplusjs.json</code> to
+                include the true canonical URL of the project (note that configuration not
+                pertaining to canonical URLs is not included in this example):
+            </p>
+
+            <pre><code class="text-monospace">{
+    "host": "example.com",
+}</code></pre>
+
+            <p>
+                Then you can use the following tags with relative URLs and they will
+                automatically be converted to absolute URLs. Furthermore, if neither a relative nor
+                absolute URL is provided, it will match where the file is served from:
+            </p>
+            <ul class="text-body-1">
+                <li><code class="text-monospace">&lt;link rel="canonical"&gt;</code></li>
+                <li><code class="text-monospace">&lt;meta property="og:url"&gt;</code></li>
+            </ul>
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/constants.html">Previous: Constants</a>
+                </div>
+                <div>
+                    <a class="link-button" href="/">Back Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[TEMPLATE: ["/body/after.html"]]-->
+</body>
+
+</html>
