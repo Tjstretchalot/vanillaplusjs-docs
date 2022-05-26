@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--[TEMPLATE: ["/head/standard.html"]]-->
+    <meta content="Documentation: Templates" property="og:title">
+    <meta content="How to use HTML templates with Vanilla Plus JS" property="og:description">
+    <meta property="og:url">
+    <link rel="canonical">
+    <!--[TEMPLATE: ["/head/global_imports.html"]]-->
+    <title>Templates: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <!--[TEMPLATE: ["/body/before.html"]]-->
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Templates</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                Almost every project will have some HTML code that should be on every page &ndash;
+                usually at minimum something in the header and something at the end of
+                the body. Since there is no browser-native way to do this without repetition
+                or an awkward source code structure, Vanilla Plus JS provides
+                a preprocessor command to import raw HTML source code into your document.
+                Furthermore, it provides a very simple stack if you need to make some
+                modifications based on context.
+            </p>
+
+            <p>
+                Templates are stored in the <code class="text-monospace">src/partials</code>
+                directory and they are referenced relative to that directory. So, for
+                example, if you have a template at
+                <code class="text-monospace">src/partials/head/standard.html</code>,
+                then it is imported using
+            </p>
+
+            <pre><code class="text-monospace">&lt;!--[TEMPLATE: ["/head/standard.html"]]--&gt;</code></pre>
+
+            <p>
+                If you want to use the stack, you pass variables using a json object:
+            </p>
+
+            <pre><code class="text-monospace">&lt;!--[TEMPLATE: ["/head/standard.html", {"title": "Try it Now"}]]--&gt;</code></pre>
+
+            <p>
+                And access them as follows:
+            </p>
+
+            <pre><code class="text-monospace">&lt;title&gt;&lt;!--[STACK: ["retrieve", "title"]]--&gt;&lt;/title&gt;</code></pre>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/icons.html">Previous: Icons</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--[TEMPLATE: ["/body/after.html"]]-->
+</body>
+
+</html>
