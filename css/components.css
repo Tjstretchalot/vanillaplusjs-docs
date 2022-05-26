@@ -134,6 +134,11 @@
     margin: 0 auto;
 }
 
+.code-tabpanel pre {
+    padding-left: 0;
+    border-left: 0;
+}
+
 /* #endregion */
 
 /* #region CARD */

@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" name="viewport">
+<meta content="Vanilla Plus JS" property="og:site_name">
+<meta content="website" propety="og:type">
+
+    <meta content="Documentation: Constants" property="og:title">
+    <meta content="How to configure environments with Vanilla Plus JS" property="og:description">
+    <meta content="https://vanillaplusjs.com/constants.html" property="og:url">
+    <link href="https://vanillaplusjs.com/constants.html" rel="canonical">
+    <link href="/css/main.css?v=2T12PqYMFIWtRwsw_ZbvImEnSivTv27MHOWon4VEz-I%3D&amp;pv=0.1.20" rel="stylesheet">
+<link href="/css/components.css?v=1KWa4_GVSraNAWC0ajrltresm_7uFsOeL8phelucaFo%3D&amp;pv=0.1.20" rel="stylesheet">
+<link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=0.1.20" rel="stylesheet">
+<link href="/css/template.css?v=NAStIQBEOQJrQpJPCdsVTiOSYihz8m9d27NcVyuujYQ%3D&amp;pv=0.1.20" rel="stylesheet">
+
+    <title>Constants: Vanilla Plus JS</title>
+</head>
+
+<body>
+    <div class="github-banner-container">
+    <a href="https://github.com/tjstretchalot/vanillaplusjs"><img loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_red_aa0000.png?resize=149%2C149" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+</div>
+
+    <div class="page-outer-container">
+        <div class="page-inner-container">
+            <h1 class="mb-0">Constants</h1>
+            <div class="subheader"><a class="link-button" href="/#docs">Back Home</a></div>
+            <p>
+                It can be helpful to have some minor differences between the production
+                and development environments. Primarily, in production it's common practice
+                to serve your API server and static assets via the same port, but it's much
+                more convenient to use different ports – or completely different urls –
+                locally. Vanilla Plus JS allows you to configure constants which depend on
+                if the server was built for production (<code class="text-monospace">vanillaplusjs build</code>)
+                or development (<code class="text-monospace">vanillaplusjs dev --watch</code>).
+            </p>
+            <p>
+                To enable this feature you will need to create the placeholder constants file,
+                which is typically used for type hints and is usually located at
+                <code class="text-monospace">src/public/js/constants.js</code>. Then it is
+                configured via <code class="text-monospace">vanillaplusjs.json</code>. The
+                default configuration is as follows (note that parts not pertaining to
+                constants are not shown):
+            </p>
+            <pre><code class="text-monospace">{
+    "js_constants": {
+        "relpath": "src/public/js/constants.js",
+        "shared": {},
+        "dev": {
+            "API_URL": "http://127.0.0.1:8080"
+        },
+        "prod": {
+            "API_URL": ""
+        }
+    }
+}</code></pre>
+
+            <p>
+                This will generate a file which depends on the environment. In
+                development it would be:
+            </p>
+
+            <pre><code class="text-monospace">export const API_URL = "http://127.0.0.1:8080";</code></pre>
+
+            <p>
+                And in production it would be:
+            </p>
+
+            <pre><code class="text-monospace">export const API_URL = "";</code></pre>
+
+            <p>
+                This could be used, for example, to make a
+                <a class="link-button" href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch">fetch</a>
+                wrapper as follows:
+            </p>
+
+            <pre><code class="text-monospace">import { API_URL } from "/js/constants.js";
+
+
+export function apiFetch(url, options) {
+    if (url.startsWith("/")) {
+        url = API_URL + url;
+    }
+
+    return fetch(url, options);
+};</code></pre>
+
+            <p>
+                The constants dictionary will be initialized with the shared values
+                and then updated with the environment values. The actual contents of the
+                constants file in your src directory will be ignored, but the file must exist
+                for the output to be generated.
+            </p>
+
+            <div class="doc-pagination">
+                <div>
+                    <a class="link-button" href="/external_files.html">Previous: External Files</a>
+                </div>
+                <div>
+                    <a class="link-button" href="#">Next: ?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/code_tabs.js?v=o6mrkzeLx-w5RWa-AbH8RYEaL8MlvqSoXBrNS9v6r50%3D&amp;pv=0.1.20" type="module"></script>
+
+
+
+
+</body></html>
