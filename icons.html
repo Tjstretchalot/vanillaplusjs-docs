@@ -13,7 +13,7 @@
 <link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=0.1.20" rel="stylesheet">
 <link href="/css/template.css?v=LeCXoQVdI66dEZmzUR3GjCtgOVRAx21XuNaJpIL52L8%3D&amp;pv=0.1.20" rel="stylesheet">
 
-    <link href="/css/icons.css?v=7OKopOQG2NG3GqYD6s_YiCAHglx66wTFBmj7-yzyh1I%3D&amp;pv=0.1.20" rel="stylesheet">
+    <link href="/css/icons.css?v=12bI6gVCuWrG4Mq-rte4Lv0bjZg6iK_w5urtRgXk9wo%3D&amp;pv=0.1.20" rel="stylesheet">
     <title>Icons: Vanilla Plus JS</title>
 </head>
 
@@ -109,9 +109,44 @@
                 For example,
                 <code class="text-monospace">/img/icons/success/primary.svg</code> is
                 the location of the <code class="text-monospace">success</code> icon in
-                the <code class="text-monospace">primary</code> color.
+                the <code class="text-monospace">primary</code> color. If you want to
+                specify the colors or sizes, they are done so through json lists. You can
+                also disable the button with <code class="text-monospace">no-btn</code>
             </p>
 
+            <pre><code class="text-monospace">/*! PREPROCESSOR: icon my-icon primary ["primary"] ["small"] no-btn */</code></pre>
+
+            <p>
+                Finally, you can configure the button colors by using a json object
+                where <code class="text-monospace">no-btn</code> would go. In this
+                case you can specify multiple button names, where the key
+                <code class="text-monospace">default</code> will not get suffixed,
+                but the rest will have their suffixes added to their class, in the
+                form
+            </p>
+            <pre><code class="text-monospace">.icon-btn-{icon_name}-{size}-{suffix}</code></pre>
+            <p>
+                For example, to configure a secondary and accent button:
+            </p>
+            <pre><code class="text-monospace">/*! PREPROCESSOR: icon eye primary
+    all-colors
+    all-sizes
+    {
+        "default": ["primary", "primary-dark", "disabled"],
+        "secondary": ["secondary", "secondary-dark", "disabled"],
+        "accent": ["accent", "accent-dark", "disabled"]
+    }
+*/
+            </code></pre>
+            <p>
+                Which would result in the following for the default, secondary,
+                and accent versions, respectively:
+            </p><ol class="text-body-1">
+                <li><button class="icon-btn-eye-large"><span class="icon-btn--icon"></span></button></li>
+                <li><button class="icon-btn-eye-large-secondary"><span class="icon-btn--icon"></span></button></li>
+                <li><button class="icon-btn-eye-large-accent"><span class="icon-btn--icon"></span></button></li>
+            </ol>
+            <p></p>
             <div class="doc-pagination">
                 <div>
                     <a class="link-button" href="/images.html">Previous: Images</a>
