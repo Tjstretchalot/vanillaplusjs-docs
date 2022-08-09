@@ -85,6 +85,22 @@ export function apiFetch(url, options) {
                 for the output to be generated.
             </p>
 
+            <p>You can also use environment variables for string values. For example, if
+                you want to load the constant "STRIPE_CLIENT_ID" from the environment variable
+                "STRIPE_CLIENT_ID", you could do:
+            </p>
+
+            <pre><code class="text-monospace">{
+                "js_constants": {
+                    "relpath": "src/public/js/constants.js",
+                    "shared": {
+                        "STRIPE_CLIENT_ID": "env://STRIPE_CLIENT_ID"
+                    },
+                    "dev": {},
+                    "prod": {}
+                }
+            }</code></pre>
+
             <div class="doc-pagination">
                 <div>
                     <a class="link-button" href="/external_files.html">Previous: External Files</a>
