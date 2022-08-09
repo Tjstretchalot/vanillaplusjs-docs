@@ -8,10 +8,10 @@
     <meta content="How to configure environments with Vanilla Plus JS" property="og:description">
     <meta content="https://vanillaplusjs.com/constants.html" property="og:url">
     <link href="https://vanillaplusjs.com/constants.html" rel="canonical">
-    <link href="/css/main.css?v=2T12PqYMFIWtRwsw_ZbvImEnSivTv27MHOWon4VEz-I%3D&amp;pv=1.0.0" rel="stylesheet">
-<link href="/css/components.css?v=1KWa4_GVSraNAWC0ajrltresm_7uFsOeL8phelucaFo%3D&amp;pv=1.0.0" rel="stylesheet">
-<link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=1.0.0" rel="stylesheet">
-<link href="/css/template.css?v=NAStIQBEOQJrQpJPCdsVTiOSYihz8m9d27NcVyuujYQ%3D&amp;pv=1.0.0" rel="stylesheet">
+    <link href="/css/main.css?v=2T12PqYMFIWtRwsw_ZbvImEnSivTv27MHOWon4VEz-I%3D&amp;pv=1.0.3" rel="stylesheet">
+<link href="/css/components.css?v=1KWa4_GVSraNAWC0ajrltresm_7uFsOeL8phelucaFo%3D&amp;pv=1.0.3" rel="stylesheet">
+<link href="/css/layout.css?v=9ivf4MEYuc1vlwXLCP0GNeZn_VmR6OwomolD-IO5zUo%3D&amp;pv=1.0.3" rel="stylesheet">
+<link href="/css/template.css?v=NAStIQBEOQJrQpJPCdsVTiOSYihz8m9d27NcVyuujYQ%3D&amp;pv=1.0.3" rel="stylesheet">
 
     <title>Constants: Vanilla Plus JS</title>
 </head>
@@ -92,6 +92,22 @@ export function apiFetch(url, options) {
                 for the output to be generated.
             </p>
 
+            <p>You can also use environment variables for string values. For example, if
+                you want to load the constant "STRIPE_CLIENT_ID" from the environment variable
+                "STRIPE_CLIENT_ID", you could do:
+            </p>
+
+            <pre><code class="text-monospace">{
+                "js_constants": {
+                    "relpath": "src/public/js/constants.js",
+                    "shared": {
+                        "STRIPE_CLIENT_ID": "env://STRIPE_CLIENT_ID"
+                    },
+                    "dev": {},
+                    "prod": {}
+                }
+            }</code></pre>
+
             <div class="doc-pagination">
                 <div>
                     <a class="link-button" href="/external_files.html">Previous: External Files</a>
@@ -102,7 +118,7 @@ export function apiFetch(url, options) {
             </div>
         </div>
     </div>
-    <script src="/js/code_tabs.js?v=o6mrkzeLx-w5RWa-AbH8RYEaL8MlvqSoXBrNS9v6r50%3D&amp;pv=1.0.0" type="module"></script>
+    <script src="/js/code_tabs.js?v=o6mrkzeLx-w5RWa-AbH8RYEaL8MlvqSoXBrNS9v6r50%3D&amp;pv=1.0.3" type="module"></script>
 
 
 
